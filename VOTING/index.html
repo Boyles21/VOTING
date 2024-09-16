@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote with Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-yellow-100"> <div class="container mx-auto px-4 py-16">
+        <h1 class="text-4xl font-bold text-center mb-8">BetaSunlight Voting Website </h1>
+        
+        <!-- Registration Form -->
+        <div id="registration-form" class="max-w-lg mx-auto bg-white shadow-lg p-8 rounded-lg">
+            <h2 class="text-2xl font-semibold mb-6">Register to Vote</h2>
+            <form id="vote-form">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 px-4 py-2 rounded-md shadow-sm focus:outline-none" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full border border-gray-300 px-4 py-2 rounded-md shadow-sm focus:outline-none" required>
+                </div>
+                <button type="button" id="paystack-payment" class="w-full bg-blue-500 text-white py-2 rounded-md font-semibold hover:bg-blue-600">
+                    Pay and Vote
+                </button>
+            </form>
+        </div>
+
+        <!-- Payment Success Message & Voting -->
+        <div id="voting-section" class="hidden max-w-lg mx-auto bg-white shadow-lg p-8 rounded-lg mt-8">
+            <h2 class="text-2xl font-semibold mb-6">Vote for your Candidate</h2>
+            <form id="voting-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700">Choose your candidate:</label>
+                    <select id="candidate" name="candidate" class="mt-1 block w-full border border-gray-300 px-4 py-2 rounded-md shadow-sm">
+                        <option value="Candidate 1">Candidate 1</option>
+                        <option value="Candidate 2">Candidate 2</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-green-500 text-white py-2 rounded-md font-semibold hover:bg-green-600">
+                    Submit Vote
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Paystack JS -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script src="/js/payment.js"></script>
+</body>
+</html>
